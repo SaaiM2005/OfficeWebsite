@@ -33,8 +33,8 @@ export default function InfoSection() {
           
           <div className="relative" data-info-image>
             <img 
-              src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000" 
-              alt="Modern technology and innovation workspace" 
+              src="/images/info.jpg" 
+              alt="Infinite Enterprises - Putting life into printing" 
               className="w-full h-[600px] object-cover minimal-shadow"
               data-testid="img-info-workspace"
             />

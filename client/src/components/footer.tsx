@@ -6,8 +6,11 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-8 h-8 relative">
-                <div className="absolute inset-0 border-2 border-white rounded-full transform rotate-45"></div>
-                <div className="absolute inset-0 border-2 border-electric rounded-full transform -rotate-45"></div>
+                <img 
+                  src="/images/logo.png" 
+                  alt="Infinite Enterprises Logo" 
+                  className="w-full h-full object-contain filter brightness-0 invert"
+                />
               </div>
               <span className="text-lg font-semibold tracking-tight">INFINITE ENTERPRISES</span>
             </div>

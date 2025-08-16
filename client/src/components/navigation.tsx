@@ -17,8 +17,11 @@ export default function Navigation() {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 relative">
-              <div className="absolute inset-0 border-2 border-black rounded-full transform rotate-45"></div>
-              <div className="absolute inset-0 border-2 border-electric rounded-full transform -rotate-45"></div>
+              <img 
+                src="/images/logo.png" 
+                alt="Infinite Enterprises Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <span className="text-xl font-semibold tracking-tight">INFINITE</span>
           </div>
