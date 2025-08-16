@@ -1,9 +1,9 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -109,7 +109,7 @@ export default function ContactSection() {
                     htmlFor="email"
                     className="block text-sm font-medium tracking-wide text-gray-700 mb-3"
                   >
-                    PHONE
+                    MAIL
                   </Label>
                   <Input
                     type="email"
