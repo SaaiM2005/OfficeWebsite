@@ -21,15 +21,7 @@ export default function HeroSection() {
             Delivering precision, efficiency, and innovation.
           </p>
           
-          <div className="animate-slide-up" style={{ animationDelay: '0.9s' }}>
-            <a 
-              href="#info" 
-              className="inline-block bg-black text-white px-8 py-4 text-sm font-medium tracking-wide hover:bg-electric transition-colors duration-300 minimal-shadow"
-              data-testid="button-discover-more"
-            >
-              DISCOVER MORE
-            </a>
-          </div>
+
         </div>
       </div>
     </section>

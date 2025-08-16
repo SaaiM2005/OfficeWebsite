@@ -20,7 +20,7 @@ export default function AboutSection() {
               <div className="relative mb-8 inline-block">
                 <div className="w-48 h-48 mx-auto rounded-full overflow-hidden minimal-shadow group-hover:shadow-lg transition-shadow duration-300">
                   <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" 
+                    src="/attached_assets/baba_1755337773306.JPG" 
                     alt="Anil P. Mahajan - Owner" 
                     className="w-full h-full object-cover"
                     data-testid="img-owner-anil"
@@ -81,8 +81,8 @@ export default function AboutSection() {
           <div className="grid md:grid-cols-2 gap-8" data-office-gallery>
             <div className="group overflow-hidden minimal-shadow hover:shadow-lg transition-shadow duration-300">
               <img 
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                alt="Modern office interior with clean design" 
+                src="/attached_assets/cabin_1755337773310.jpg" 
+                alt="Executive cabin and meeting area" 
                 className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                 data-testid="img-office-interior"
               />
@@ -90,8 +90,8 @@ export default function AboutSection() {
             
             <div className="group overflow-hidden minimal-shadow hover:shadow-lg transition-shadow duration-300">
               <img 
-                src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                alt="Professional office workspace environment" 
+                src="/attached_assets/office_1755337773311.jpg" 
+                alt="Office inventory and storage area" 
                 className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                 data-testid="img-office-workspace"
               />
