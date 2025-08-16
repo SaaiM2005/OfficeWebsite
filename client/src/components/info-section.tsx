@@ -33,7 +33,7 @@ export default function InfoSection() {
           
           <div className="relative" data-info-image>
             <img 
-              src="/images/info.jpg" 
+              src="/images/ie.jpg" 
               alt="Infinite Enterprises - Putting life into printing" 
               className="w-full h-[600px] object-cover minimal-shadow"
               data-testid="img-info-workspace"

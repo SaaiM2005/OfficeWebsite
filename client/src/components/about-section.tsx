@@ -14,7 +14,7 @@ export default function AboutSection() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-16" data-owners-grid>
+          <div className="flex justify-center" data-owners-grid>
             {/* Owner 1 */}
             <div className="text-center group" data-testid="card-owner-anil">
               <div className="relative mb-8 inline-block">
@@ -41,31 +41,7 @@ export default function AboutSection() {
               </div>
             </div>
             
-            {/* Owner 2 */}
-            <div className="text-center group" data-testid="card-owner-yogita">
-              <div className="relative mb-8 inline-block">
-                <div className="w-48 h-48 mx-auto rounded-full overflow-hidden minimal-shadow group-hover:shadow-lg transition-shadow duration-300">
-                  <img 
-                    src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" 
-                    alt="Yogita A. Mahajan - Co-Owner" 
-                    className="w-full h-full object-cover"
-                    data-testid="img-owner-yogita"
-                  />
-                </div>
-                <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-electric rounded-full"></div>
-              </div>
-              
-              <div className="space-y-4">
-                <div>
-                  <p className="text-sm font-medium tracking-wide text-gray-500 uppercase mb-2" data-testid="text-role-coowner">Co-Owner</p>
-                  <h3 className="text-2xl font-semibold tracking-tight" data-testid="text-name-yogita">Yogita A. Mahajan</h3>
-                </div>
-                
-                <blockquote className="text-gray-600 italic max-w-sm mx-auto leading-relaxed" data-testid="text-quote-yogita">
-                  "As a co-owner, I guarantee unwavering commitment to excellence, innovation, and customer satisfaction, ensuring your trust in every solution."
-                </blockquote>
-              </div>
-            </div>
+          
           </div>
         </div>
         

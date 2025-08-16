@@ -1,0 +1,600 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFINITE ENTERPRISES - Futuristic Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'cosmic-blue': {
+                        50: '#eff6ff',
+                        100: '#dbeafe',
+                        200: '#bfdbfe',
+                        300: '#93c5fd',
+                        400: '#60a5fa',
+                        500: '#3b82f6',
+                        600: '#2563eb',
+                        700: '#1d4ed8',
+                        800: '#1e3a8a',
+                        900: '#1e40af',
+                        950: '#0A0E1A'
+                    },
+                    'neon-cyan': '#06B6D4',
+                    'neon-green': '#10B981',
+                    'space-dark': '#0F172A',
+                    'space-light': '#1E293B'
+                },
+                fontFamily: {
+                    'futuristic': ['Orbitron', 'monospace'],
+                    'tech': ['JetBrains Mono', 'monospace'],
+                    'modern': ['Inter', 'sans-serif']
+                },
+                animation: {
+                    'float': 'float 6s ease-in-out infinite',
+                    'glow': 'glow 2s ease-in-out infinite alternate',
+                    'slide-up': 'slideUp 0.8s ease-out',
+                    'fade-in': 'fadeIn 1s ease-out'
+                },
+                backdropBlur: {
+                    'xs': '2px',
+                }
+            }
+        }
+    };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 5px #06B6D4, 0 0 10px #06B6D4, 0 0 15px #06B6D4; }
+            to { box-shadow: 0 0 10px #06B6D4, 0 0 20px #06B6D4, 0 0 30px #06B6D4; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #06B6D4, #10B981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .bg-cosmic-gradient {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0A0E1A 100%);
+        }
+        
+        .neon-border {
+            border: 2px solid transparent;
+            background: linear-gradient(135deg, #0F172A, #1E293B) padding-box,
+                        linear-gradient(135deg, #06B6D4, #10B981) border-box;
+        }
+        
+        .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        
+        .particle-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+            animation: float 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body class="font-modern bg-cosmic-gradient text-white min-h-screen relative overflow-x-hidden">
+    <!-- Particle Background -->
+    <div class="particle-bg fixed inset-0 z-0"></div>
+    
+    <!-- @COMPONENT: MainWrapper -->
+    <div id="wrapper" class="relative z-10">
+        
+        <!-- @COMPONENT: Header -->
+        <header id="header" class="fixed top-0 left-0 right-0 z-50 glass-morphism border-b border-white/10">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <!-- Logo Section -->
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-full glass-morphism flex items-center justify-center animate-float">
+                            <!-- Infinity symbol using geometric shapes since no custom SVG -->
+                            <div class="w-8 h-4 border-2 border-neon-cyan rounded-full transform rotate-45"></div>
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-futuristic font-bold text-gradient">INFINITE</h1>
+                            <p class="text-xs text-gray-300 font-tech">ENTERPRISES</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation -->
+                    <nav class="hidden md:block">
+                        <ul class="flex space-x-8">
+                            <li><a href="#info" class="nav-link text-gray-300 hover:text-neon-cyan transition-colors duration-300 font-medium">Info</a></li>
+                            <li><a href="#product" class="nav-link text-gray-300 hover:text-neon-cyan transition-colors duration-300 font-medium">Products</a></li>
+                            <li><a href="#about" class="nav-link text-gray-300 hover:text-neon-cyan transition-colors duration-300 font-medium">About Us</a></li>
+                            <li><a href="#contact" class="nav-link text-gray-300 hover:text-neon-cyan transition-colors duration-300 font-medium">Contact</a></li>
+                        </ul>
+                    </nav>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden glass-morphism p-3 rounded-lg" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-neon-cyan"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-nav" class="md:hidden hidden glass-morphism mx-6 mb-4 rounded-lg p-4">
+                <ul class="space-y-3">
+                    <li><a href="#info" class="block text-gray-300 hover:text-neon-cyan transition-colors duration-300 font-medium">Info</a></li>
+                    <li><a href="#product" class="block text-gray-300 hover:text-neon-cyan transition-colors duration-300 font-medium">Products</a></li>
+                    <li><a href="#about" class="block text-gray-300 hover:text-neon-cyan transition-colors duration-300 font-medium">About Us</a></li>
+                    <li><a href="#contact" class="block text-gray-300 hover:text-neon-cyan transition-colors duration-300 font-medium">Contact</a></li>
+                </ul>
+            </div>
+        </header>
+        
+        <!-- @COMPONENT: HeroSection -->
+        <section class="min-h-screen flex items-center justify-center pt-24 pb-16">
+            <div class="container mx-auto px-6 text-center">
+                <div class="animate-slide-up">
+                    <h1 class="text-6xl md:text-8xl font-futuristic font-black mb-6 text-gradient leading-tight">
+                        INFINITE<br>ENTERPRISES
+                    </h1>
+                    <div class="glass-morphism rounded-full px-8 py-4 inline-block mb-8">
+                        <p class="text-lg md:text-xl font-tech text-gray-300">
+                            AUTHORIZED DEALER FOR 
+                            <a href="https://www.technovaworld.com/" class="text-neon-cyan hover:text-neon-green transition-colors duration-300 font-semibold">
+                                TECHNOVA IMAGING PVT. LTD
+                            </a> SINCE 2012
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button onclick="scrollToSection('info')" class="glass-morphism neon-border px-8 py-4 rounded-lg hover-glow font-semibold">
+                            EXPLORE INFO
+                        </button>
+                        <button onclick="scrollToSection('product')" class="bg-gradient-to-r from-neon-cyan to-neon-green px-8 py-4 rounded-lg hover-glow font-semibold text-space-dark">
+                            VIEW PRODUCTS
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- @COMPONENT: Main Content -->
+        <main id="main" class="relative z-10">
+            
+            <!-- @COMPONENT: InfoSection -->
+            <section id="info" class="py-24">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-6xl mx-auto">
+                        <h2 class="text-5xl font-futuristic font-bold text-center mb-16 text-gradient">COMPANY INFO</h2>
+                        
+                        <div class="grid lg:grid-cols-2 gap-12 items-center">
+                            <div class="space-y-6">
+                                <!-- Modern corporate office building at sunset -->
+                                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=800" 
+                                     alt="Modern corporate building representing innovation" 
+                                     class="rounded-2xl shadow-2xl hover-glow" data-mock="true">
+                            </div>
+                            <div class="glass-morphism rounded-2xl p-8 space-y-6">
+                                <div class="space-y-4 text-lg leading-relaxed text-gray-300">
+                                    <p>
+                                        Since 2012, <span class="text-neon-cyan font-semibold">Infinite Enterprises</span> has proudly served as an authorized dealer for TechNova Imaging, delivering cutting-edge imaging solutions that drive success. With a wide range of high-quality products, we cater to diverse industries, helping businesses achieve precision, efficiency, and sustainability.
+                                    </p>
+                                    <p>
+                                        Built on a foundation of <span class="text-neon-green font-semibold">innovation</span>, strong partnerships, and unwavering dedication, we are more than suppliers—we are your growth partners. At Infinite Enterprises, your success fuels our passion to deliver excellence every day.
+                                    </p>
+                                    <p class="text-neon-cyan font-semibold">
+                                        Let's continue to inspire, innovate, and create a brighter future together.
+                                    </p>
+                                    <p class="text-xl font-tech text-gradient">
+                                        With Infinite Enterprises, you're always in capable hands.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- @COMPONENT: ProductsSection -->
+            <section id="product" class="py-24 bg-gradient-to-b from-transparent to-space-light/50">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-6xl mx-auto">
+                        <h2 class="text-5xl font-futuristic font-bold text-center mb-16 text-gradient">OUR PRODUCTS</h2>
+                        
+                        <!-- @MAP: products.map(product => ( -->
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <!-- Product 1: CTP Plates -->
+                            <div class="glass-morphism rounded-2xl p-6 hover-glow group cursor-pointer" onclick="openProductModal('CTP Plates')">
+                                <div class="aspect-square mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-cosmic-blue-800 to-cosmic-blue-900 flex items-center justify-center">
+                                    <i class="fas fa-microchip text-6xl text-neon-cyan group-hover:text-neon-green transition-colors duration-300"></i>
+                                </div>
+                                <h3 class="text-2xl font-futuristic font-bold text-center text-gradient mb-2">CTP PLATES</h3>
+                                <p class="text-center text-gray-400 font-tech">Computer-to-Plate Technology</p>
+                                <div class="mt-4 text-center">
+                                    <span class="text-neon-cyan font-semibold">Learn More →</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Product 2: P.S Plates -->
+                            <div class="glass-morphism rounded-2xl p-6 hover-glow group cursor-pointer" onclick="openProductModal('P.S Plates')">
+                                <div class="aspect-square mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-cosmic-blue-800 to-cosmic-blue-900 flex items-center justify-center">
+                                    <i class="fas fa-layer-group text-6xl text-neon-cyan group-hover:text-neon-green transition-colors duration-300"></i>
+                                </div>
+                                <h3 class="text-2xl font-futuristic font-bold text-center text-gradient mb-2">P.S PLATES</h3>
+                                <p class="text-center text-gray-400 font-tech">Photosensitive Plates</p>
+                                <div class="mt-4 text-center">
+                                    <span class="text-neon-cyan font-semibold">Learn More →</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Product 3: PressRoom Chemicals -->
+                            <div class="glass-morphism rounded-2xl p-6 hover-glow group cursor-pointer" onclick="openProductModal('PressRoom Chemicals')">
+                                <div class="aspect-square mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-cosmic-blue-800 to-cosmic-blue-900 flex items-center justify-center">
+                                    <i class="fas fa-flask text-6xl text-neon-cyan group-hover:text-neon-green transition-colors duration-300"></i>
+                                </div>
+                                <h3 class="text-2xl font-futuristic font-bold text-center text-gradient mb-2">PRESSROOM CHEMICALS</h3>
+                                <p class="text-center text-gray-400 font-tech">Professional Grade Solutions</p>
+                                <div class="mt-4 text-center">
+                                    <span class="text-neon-cyan font-semibold">Learn More →</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Product 4: Printing Material -->
+                            <div class="glass-morphism rounded-2xl p-6 hover-glow group cursor-pointer" onclick="openProductModal('Printing Material')">
+                                <div class="aspect-square mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-cosmic-blue-800 to-cosmic-blue-900 flex items-center justify-center">
+                                    <i class="fas fa-print text-6xl text-neon-cyan group-hover:text-neon-green transition-colors duration-300"></i>
+                                </div>
+                                <h3 class="text-2xl font-futuristic font-bold text-center text-gradient mb-2">PRINTING MATERIAL</h3>
+                                <p class="text-center text-gray-400 font-tech">Quality Materials & Supplies</p>
+                                <div class="mt-4 text-center">
+                                    <span class="text-neon-cyan font-semibold">Learn More →</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- @END_MAP -->
+                    </div>
+                </div>
+            </section>
+            
+            <!-- @COMPONENT: AboutSection -->
+            <section id="about" class="py-24">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-6xl mx-auto">
+                        <h2 class="text-5xl font-futuristic font-bold text-center mb-16 text-gradient">LEADERSHIP TEAM</h2>
+                        
+                        <!-- Owners Section -->
+                        <div class="grid lg:grid-cols-2 gap-12 mb-20">
+                            <!-- Owner 1 -->
+                            <div class="glass-morphism rounded-2xl p-8 text-center hover-glow">
+                                <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-neon-cyan to-neon-green p-1">
+                                    <!-- Professional headshot of a confident businessman in formal attire -->
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=300" 
+                                         alt="Anil P. Mahajan - Owner" 
+                                         class="w-full h-full rounded-full object-cover" data-mock="true">
+                                </div>
+                                <p class="text-neon-cyan font-tech uppercase tracking-wider mb-2">OWNER</p>
+                                <h3 class="text-3xl font-futuristic font-bold text-gradient mb-4">ANIL P. MAHAJAN</h3>
+                                <blockquote class="text-lg text-gray-300 italic leading-relaxed">
+                                    "At Infinite Enterprises, our mission is to deliver innovative solutions with integrity, quality, and unwavering commitment to our clients."
+                                </blockquote>
+                            </div>
+                            
+                            <!-- Owner 2 -->
+                            <div class="glass-morphism rounded-2xl p-8 text-center hover-glow">
+                                <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-neon-cyan to-neon-green p-1">
+                                    <!-- Professional headshot of a confident businesswoman in formal attire -->
+                                    <img src="https://pixabay.com/get/g87333a40c55dc956ec9a4ebca040ba56257954c470002571f725dd4ec9dbb34d01dea3a113fcb3edfef7cdb54135ba8b2dffd785ad0c3c4e52dc598bb559813f_1280.jpg" 
+                                         alt="Yogita A. Mahajan - Co-Owner" 
+                                         class="w-full h-full rounded-full object-cover" data-mock="true">
+                                </div>
+                                <p class="text-neon-cyan font-tech uppercase tracking-wider mb-2">CO-OWNER</p>
+                                <h3 class="text-3xl font-futuristic font-bold text-gradient mb-4">YOGITA A. MAHAJAN</h3>
+                                <blockquote class="text-lg text-gray-300 italic leading-relaxed">
+                                    "As a co-owner, I guarantee unwavering commitment to excellence, innovation, and customer satisfaction, ensuring your trust in every solution."
+                                </blockquote>
+                            </div>
+                        </div>
+                        
+                        <!-- Office Section -->
+                        <div class="mb-20">
+                            <h3 class="text-4xl font-futuristic font-bold text-center mb-12 text-gradient">OUR OFFICE</h3>
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <!-- Modern office interior with glass walls and contemporary furniture -->
+                                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                                     alt="Modern office interior with glass walls" 
+                                     class="rounded-2xl shadow-2xl hover-glow" data-mock="true">
+                                <!-- Professional conference room with high-tech equipment -->
+                                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                                     alt="Professional conference room with modern technology" 
+                                     class="rounded-2xl shadow-2xl hover-glow" data-mock="true">
+                            </div>
+                        </div>
+                        
+                        <!-- Location Section -->
+                        <div>
+                            <h3 class="text-4xl font-futuristic font-bold text-center mb-12 text-gradient">OUR LOCATION</h3>
+                            <div class="glass-morphism rounded-2xl p-4 hover-glow">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.112178296219!2d74.57309527519858!3d16.859174983940708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc1198fc7eb8587%3A0xea550c7acb0941e9!2sInfinite%20Enterprises!5e1!3m2!1sen!2sin!4v1733347427798!5m2!1sen!2sin" 
+                                    width="100%" 
+                                    height="450" 
+                                    style="border:0; border-radius: 1rem;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    class="rounded-xl">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- @COMPONENT: ContactSection -->
+            <section id="contact" class="py-24 bg-gradient-to-b from-transparent to-space-light/50">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-4xl mx-auto">
+                        <h2 class="text-5xl font-futuristic font-bold text-center mb-16 text-gradient">GET IN TOUCH</h2>
+                        
+                        <div class="glass-morphism rounded-2xl p-8 hover-glow">
+                            <form method="post" action="#" class="space-y-6">
+                                <!-- @STATE: formData:{name:string, email:string, message:string} = {name:'', email:'', message:''} -->
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="name" class="block text-neon-cyan font-semibold mb-2 font-tech">NAME</label>
+                                        <input type="text" 
+                                               name="name" 
+                                               id="name" 
+                                               data-bind="formData.name"
+                                               class="w-full bg-white/5 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-neon-cyan focus:outline-none transition-colors duration-300"
+                                               placeholder="Enter your name">
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block text-neon-cyan font-semibold mb-2 font-tech">EMAIL</label>
+                                        <input type="email" 
+                                               name="email" 
+                                               id="email" 
+                                               data-bind="formData.email"
+                                               class="w-full bg-white/5 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-neon-cyan focus:outline-none transition-colors duration-300"
+                                               placeholder="Enter your email">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-neon-cyan font-semibold mb-2 font-tech">MESSAGE</label>
+                                    <textarea name="message" 
+                                              id="message" 
+                                              rows="5" 
+                                              data-bind="formData.message"
+                                              class="w-full bg-white/5 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-neon-cyan focus:outline-none transition-colors duration-300 resize-none"
+                                              placeholder="Tell us about your requirements..."></textarea>
+                                </div>
+                                <div class="flex flex-wrap gap-4 justify-center">
+                                    <button type="submit" 
+                                            data-event="click:handleSubmit" 
+                                            data-implementation="Should validate form before submission"
+                                            class="bg-gradient-to-r from-neon-cyan to-neon-green px-8 py-3 rounded-lg font-semibold text-space-dark hover-glow font-tech">
+                                        SEND MESSAGE
+                                    </button>
+                                    <button type="reset" 
+                                            class="glass-morphism neon-border px-8 py-3 rounded-lg hover-glow font-semibold font-tech">
+                                        RESET FORM
+                                    </button>
+                                </div>
+                            </form>
+                            
+                            <!-- Social Links -->
+                            <div class="mt-8 pt-8 border-t border-white/20">
+                                <p class="text-center text-gray-300 mb-4 font-tech">CONNECT WITH US</p>
+                                <div class="flex justify-center space-x-6">
+                                    <a href="#" class="w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover-glow group">
+                                        <i class="fab fa-twitter text-xl text-gray-400 group-hover:text-neon-cyan transition-colors duration-300"></i>
+                                    </a>
+                                    <a href="#" class="w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover-glow group">
+                                        <i class="fab fa-facebook-f text-xl text-gray-400 group-hover:text-neon-cyan transition-colors duration-300"></i>
+                                    </a>
+                                    <a href="#" class="w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover-glow group">
+                                        <i class="fab fa-instagram text-xl text-gray-400 group-hover:text-neon-cyan transition-colors duration-300"></i>
+                                    </a>
+                                    <a href="#" class="w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover-glow group">
+                                        <i class="fab fa-linkedin-in text-xl text-gray-400 group-hover:text-neon-cyan transition-colors duration-300"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- @COMPONENT: ProductModal -->
+        <div id="productModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm">
+            <div class="flex items-center justify-center min-h-screen p-6">
+                <div class="glass-morphism rounded-2xl max-w-2xl w-full p-8 relative">
+                    <button onclick="closeProductModal()" class="absolute top-4 right-4 w-10 h-10 glass-morphism rounded-full flex items-center justify-center hover-glow">
+                        <i class="fas fa-times text-neon-cyan"></i>
+                    </button>
+                    <h2 id="modal-title" class="text-3xl font-futuristic font-bold text-gradient mb-6">PRODUCT DETAILS</h2>
+                    <div id="modal-content" class="space-y-4 text-gray-300">
+                        <!-- Modal content will be populated by JavaScript -->
+                    </div>
+                    <div class="mt-8 text-center">
+                        <button onclick="closeProductModal()" class="bg-gradient-to-r from-neon-cyan to-neon-green px-8 py-3 rounded-lg font-semibold text-space-dark hover-glow font-tech">
+                            CLOSE
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- @COMPONENT: BackToTop -->
+        <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover-glow hidden z-40" onclick="scrollToTop()">
+            <i class="fas fa-chevron-up text-neon-cyan"></i>
+        </button>
+    </div>
+    <!-- @END_COMPONENT: MainWrapper -->
+    
+    <script>
+        // Preserve original functionality with modern enhancements
+        
+        // Navigation functionality
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+        
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileNav.classList.toggle('hidden');
+        }
+        
+        // Product modal functionality
+        const productDetails = {
+            'CTP Plates': {
+                description: 'Computer-to-Plate technology for direct digital printing solutions.',
+                features: ['High resolution output', 'Fast processing', 'Consistent quality', 'Environmental friendly'],
+                applications: ['Commercial printing', 'Packaging', 'Publishing', 'Digital workflows']
+            },
+            'P.S Plates': {
+                description: 'Photosensitive plates for traditional offset printing processes.',
+                features: ['Superior image quality', 'Excellent durability', 'Chemical resistance', 'Cost effective'],
+                applications: ['Offset printing', 'Commercial applications', 'Short run jobs', 'Traditional workflows']
+            },
+            'PressRoom Chemicals': {
+                description: 'Professional grade chemicals for optimal printing performance.',
+                features: ['Premium quality', 'Consistent performance', 'Safe formulations', 'Technical support'],
+                applications: ['Press maintenance', 'Quality control', 'Process optimization', 'Professional printing']
+            },
+            'Printing Material': {
+                description: 'Comprehensive range of printing materials and supplies.',
+                features: ['Wide variety', 'Quality assured', 'Competitive pricing', 'Reliable supply'],
+                applications: ['General printing', 'Specialty applications', 'Custom solutions', 'Bulk orders']
+            }
+        };
+        
+        function openProductModal(productName) {
+            const modal = document.getElementById('productModal');
+            const title = document.getElementById('modal-title');
+            const content = document.getElementById('modal-content');
+            
+            const product = productDetails[productName];
+            
+            title.textContent = productName.toUpperCase();
+            content.innerHTML = `
+                <p class="text-lg mb-4">${product.description}</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-neon-cyan font-semibold mb-3 font-tech">KEY FEATURES</h4>
+                        <ul class="space-y-2">
+                            ${product.features.map(feature => `<li class="flex items-center"><i class="fas fa-check text-neon-green mr-2"></i>${feature}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-neon-cyan font-semibold mb-3 font-tech">APPLICATIONS</h4>
+                        <ul class="space-y-2">
+                            ${product.applications.map(app => `<li class="flex items-center"><i class="fas fa-arrow-right text-neon-cyan mr-2"></i>${app}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeProductModal() {
+            const modal = document.getElementById('productModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Back to top button visibility
+        window.addEventListener('scroll', () => {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.remove('hidden');
+            } else {
+                backToTop.classList.add('hidden');
+            }
+        });
+        
+        // Smooth navigation link behavior
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+                
+                // Close mobile menu if open
+                const mobileNav = document.getElementById('mobile-nav');
+                if (!mobileNav.classList.contains('hidden')) {
+                    mobileNav.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Initialize animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-up');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all major sections for animation
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // TODO: Implement business logic for form submission, API calls, and state management
+        // TODO: Add real product data integration
+        // TODO: Implement contact form backend integration
+        // TODO: Add analytics tracking
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,590 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFINITE ENTERPRISES</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'funnel': ['Funnel Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        'electric': '#0066FF',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                    }
+                }
+            }
+        };
+    </script>
+    
+    <!-- Funnel Sans Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Heroicons -->
+    <script src="https://unpkg.com/heroicons@2.0.18/24/outline/index.js" type="module"></script>
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .parallax-element {
+            will-change: transform;
+        }
+        
+        .minimal-shadow {
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+        }
+        
+        .section-spacing {
+            scroll-margin-top: 80px;
+        }
+    </style>
+</head>
+<body class="font-funnel bg-white text-black antialiased">
+    
+    <!-- @COMPONENT: NavigationHeader -->
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100" data-nav>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <!-- Geometric infinity symbol as pure CSS -->
+                    <div class="w-10 h-10 relative">
+                        <div class="absolute inset-0 border-2 border-black rounded-full transform rotate-45"></div>
+                        <div class="absolute inset-0 border-2 border-electric rounded-full transform -rotate-45"></div>
+                    </div>
+                    <span class="text-xl font-semibold tracking-tight">INFINITE</span>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-12">
+                    <a href="#info" class="text-sm font-medium tracking-wide hover:text-electric transition-colors duration-300 nav-link">INFO</a>
+                    <a href="#about" class="text-sm font-medium tracking-wide hover:text-electric transition-colors duration-300 nav-link">ABOUT</a>
+                    <a href="#contact" class="text-sm font-medium tracking-wide hover:text-electric transition-colors duration-300 nav-link">CONTACT</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden w-6 h-6" data-mobile-menu-toggle>
+                    <div class="w-full h-0.5 bg-black mb-1.5 transition-transform duration-300"></div>
+                    <div class="w-full h-0.5 bg-black mb-1.5 transition-transform duration-300"></div>
+                    <div class="w-full h-0.5 bg-black transition-transform duration-300"></div>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden bg-white border-t border-gray-100 hidden" data-mobile-menu>
+            <div class="px-6 py-6 space-y-4">
+                <a href="#info" class="block text-sm font-medium tracking-wide hover:text-electric transition-colors">INFO</a>
+                <a href="#about" class="block text-sm font-medium tracking-wide hover:text-electric transition-colors">ABOUT</a>
+                <a href="#contact" class="block text-sm font-medium tracking-wide hover:text-electric transition-colors">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: NavigationHeader -->
+    
+    <!-- @COMPONENT: HeroSection -->
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-20 left-20 w-64 h-64 border border-gray-300 rounded-full animate-float"></div>
+            <div class="absolute bottom-32 right-32 w-48 h-48 border border-gray-300 rounded-full animate-float" style="animation-delay: -3s;"></div>
+            <div class="absolute top-1/2 left-1/3 w-32 h-32 border border-gray-300 rounded-full animate-float" style="animation-delay: -1.5s;"></div>
+        </div>
+        
+        <div class="text-center max-w-4xl mx-auto px-6 relative z-10" data-hero-content>
+            <div class="parallax-element" data-parallax-speed="0.5">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight mb-8 animate-fade-in">
+                    INFINITE<br/>
+                    <span class="font-semibold">ENTERPRISES</span>
+                </h1>
+                
+                <div class="w-24 h-px bg-electric mx-auto mb-8 animate-slide-up" style="animation-delay: 0.3s;"></div>
+                
+                <p class="text-lg md:text-xl font-light tracking-wide text-gray-600 max-w-2xl mx-auto mb-12 animate-slide-up" style="animation-delay: 0.6s;">
+                    Authorized dealer for TechNova Imaging since 2012.<br/>
+                    Delivering precision, efficiency, and innovation.
+                </p>
+                
+                <div class="animate-slide-up" style="animation-delay: 0.9s;">
+                    <a href="#info" class="inline-block bg-black text-white px-8 py-4 text-sm font-medium tracking-wide hover:bg-electric transition-colors duration-300 minimal-shadow">
+                        DISCOVER MORE
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+    
+    <!-- @COMPONENT: InfoSection -->
+    <!-- Info Section -->
+    <section id="info" class="section-spacing py-32 bg-white">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8" data-info-content>
+                    <div>
+                        <div class="w-16 h-px bg-electric mb-8"></div>
+                        <h2 class="text-4xl md:text-5xl font-light tracking-tight mb-8">
+                            Excellence<br/>
+                            <span class="font-semibold">Since 2012</span>
+                        </h2>
+                    </div>
+                    
+                    <div class="space-y-6 text-gray-600 leading-relaxed">
+                        <p class="text-lg">
+                            Since 2012, Infinite Enterprises has proudly served as an authorized dealer for TechNova Imaging, delivering cutting-edge imaging solutions that drive success.
+                        </p>
+                        
+                        <p>
+                            With a wide range of high-quality products, we cater to diverse industries, helping businesses achieve precision, efficiency, and sustainability.
+                        </p>
+                        
+                        <p>
+                            Built on a foundation of innovation, strong partnerships, and unwavering dedication, we are more than suppliers—we are your growth partners.
+                        </p>
+                        
+                        <p class="font-medium text-black">
+                            With Infinite Enterprises, you're always in capable hands.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="relative" data-info-image>
+                    <!-- Modern geometric abstract image representing technology/innovation -->
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000" 
+                         alt="Modern technology and innovation workspace" 
+                         class="w-full h-[600px] object-cover minimal-shadow" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: InfoSection -->
+    
+    <!-- @COMPONENT: AboutSection -->
+    <!-- About Section -->
+    <section id="about" class="section-spacing py-32 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <!-- Owners Section -->
+            <div class="mb-24">
+                <div class="text-center mb-16">
+                    <div class="w-16 h-px bg-electric mx-auto mb-8"></div>
+                    <h2 class="text-4xl md:text-5xl font-light tracking-tight mb-4">
+                        <span class="font-semibold">Leadership</span>
+                    </h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        Meet the visionaries behind our success
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 lg:gap-16" data-owners-grid>
+                    <!-- Owner 1 -->
+                    <div class="text-center group" data-owner-card>
+                        <div class="relative mb-8 inline-block">
+                            <div class="w-48 h-48 mx-auto rounded-full overflow-hidden minimal-shadow group-hover:shadow-lg transition-shadow duration-300">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" 
+                                     alt="Anil P. Mahajan - Owner" 
+                                     class="w-full h-full object-cover" data-mock="true" />
+                            </div>
+                            <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-electric rounded-full"></div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm font-medium tracking-wide text-gray-500 uppercase mb-2">Owner</p>
+                                <h3 class="text-2xl font-semibold tracking-tight">Anil P. Mahajan</h3>
+                            </div>
+                            
+                            <blockquote class="text-gray-600 italic max-w-sm mx-auto leading-relaxed">
+                                "At Infinite Enterprises, our mission is to deliver innovative solutions with integrity, quality, and unwavering commitment to our clients."
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                    <!-- Owner 2 -->
+                    <div class="text-center group" data-owner-card>
+                        <div class="relative mb-8 inline-block">
+                            <div class="w-48 h-48 mx-auto rounded-full overflow-hidden minimal-shadow group-hover:shadow-lg transition-shadow duration-300">
+                                <img src="https://pixabay.com/get/ge2e4d97eb8d795e56a83ee20dce55ade2681a300dd97b4c9581337a9a72110881b096506e9080b58b26b5e88b9d097e727f2c79fdd0cc98608a6ade10d212f34_1280.jpg" 
+                                     alt="Yogita A. Mahajan - Co-Owner" 
+                                     class="w-full h-full object-cover" data-mock="true" />
+                            </div>
+                            <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-electric rounded-full"></div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm font-medium tracking-wide text-gray-500 uppercase mb-2">Co-Owner</p>
+                                <h3 class="text-2xl font-semibold tracking-tight">Yogita A. Mahajan</h3>
+                            </div>
+                            
+                            <blockquote class="text-gray-600 italic max-w-sm mx-auto leading-relaxed">
+                                "As a co-owner, I guarantee unwavering commitment to excellence, innovation, and customer satisfaction, ensuring your trust in every solution."
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Office Section -->
+            <div class="mb-24">
+                <div class="text-center mb-16">
+                    <div class="w-16 h-px bg-electric mx-auto mb-8"></div>
+                    <h3 class="text-3xl md:text-4xl font-light tracking-tight">
+                        Our <span class="font-semibold">Workspace</span>
+                    </h3>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8" data-office-gallery>
+                    <!-- Modern office cabin interior -->
+                    <div class="group overflow-hidden minimal-shadow hover:shadow-lg transition-shadow duration-300">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                             alt="Modern office interior with clean design" 
+                             class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    
+                    <!-- Professional office workspace -->
+                    <div class="group overflow-hidden minimal-shadow hover:shadow-lg transition-shadow duration-300">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                             alt="Professional office workspace environment" 
+                             class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Location Section -->
+            <div>
+                <div class="text-center mb-16">
+                    <div class="w-16 h-px bg-electric mx-auto mb-8"></div>
+                    <h3 class="text-3xl md:text-4xl font-light tracking-tight">
+                        Visit <span class="font-semibold">Our Location</span>
+                    </h3>
+                </div>
+                
+                <div class="bg-white p-8 minimal-shadow" data-map-container>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.112178296219!2d74.57309527519858!3d16.859174983940708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc1198fc7eb8587%3A0xea550c7acb0941e9!2sInfinite%20Enterprises!5e1!3m2!1sen!2sin!4v1733347427798!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0; filter: grayscale(20%);" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="w-full">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AboutSection -->
+    
+    <!-- @COMPONENT: ContactSection -->
+    <!-- Contact Section -->
+    <section id="contact" class="section-spacing py-32 bg-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="w-16 h-px bg-electric mx-auto mb-8"></div>
+                <h2 class="text-4xl md:text-5xl font-light tracking-tight mb-8">
+                    Get In <span class="font-semibold">Touch</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Ready to elevate your business with innovative imaging solutions? Let's start a conversation.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div data-contact-form>
+                    <form class="space-y-8" data-implementation="Connect to backend API for form submission">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <label for="name" class="block text-sm font-medium tracking-wide text-gray-700 mb-3">NAME</label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name" 
+                                    class="w-full px-0 py-4 text-lg bg-transparent border-0 border-b-2 border-gray-200 focus:border-electric focus:outline-none transition-colors duration-300"
+                                    data-bind="formData.name"
+                                />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="block text-sm font-medium tracking-wide text-gray-700 mb-3">EMAIL</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    class="w-full px-0 py-4 text-lg bg-transparent border-0 border-b-2 border-gray-200 focus:border-electric focus:outline-none transition-colors duration-300"
+                                    data-bind="formData.email"
+                                />
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="block text-sm font-medium tracking-wide text-gray-700 mb-3">MESSAGE</label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                rows="5" 
+                                class="w-full px-0 py-4 text-lg bg-transparent border-0 border-b-2 border-gray-200 focus:border-electric focus:outline-none transition-colors duration-300 resize-none"
+                                data-bind="formData.message"
+                            ></textarea>
+                        </div>
+                        
+                        <div class="flex items-center justify-between pt-4">
+                            <button 
+                                type="submit" 
+                                class="bg-black text-white px-8 py-4 text-sm font-medium tracking-wide hover:bg-electric transition-colors duration-300 minimal-shadow"
+                                data-event="click:handleSubmit"
+                            >
+                                SEND MESSAGE
+                            </button>
+                            
+                            <button 
+                                type="reset" 
+                                class="text-gray-500 hover:text-black transition-colors duration-300 text-sm font-medium tracking-wide"
+                            >
+                                RESET
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Contact Info & Social -->
+                <div class="space-y-12" data-contact-info>
+                    <div>
+                        <h3 class="text-xl font-semibold tracking-tight mb-6">Connect With Us</h3>
+                        <div class="space-y-4 text-gray-600">
+                            <p class="flex items-center space-x-3">
+                                <span class="w-5 h-5 bg-electric/10 rounded-full flex items-center justify-center">
+                                    <span class="w-2 h-2 bg-electric rounded-full"></span>
+                                </span>
+                                <span>Authorized TechNova Imaging Dealer</span>
+                            </p>
+                            <p class="flex items-center space-x-3">
+                                <span class="w-5 h-5 bg-electric/10 rounded-full flex items-center justify-center">
+                                    <span class="w-2 h-2 bg-electric rounded-full"></span>
+                                </span>
+                                <span>Serving clients since 2012</span>
+                            </p>
+                            <p class="flex items-center space-x-3">
+                                <span class="w-5 h-5 bg-electric/10 rounded-full flex items-center justify-center">
+                                    <span class="w-2 h-2 bg-electric rounded-full"></span>
+                                </span>
+                                <span>Professional imaging solutions</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-sm font-medium tracking-wide text-gray-500 uppercase mb-6">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-gray-100 hover:bg-electric hover:text-white flex items-center justify-center transition-colors duration-300" data-mock="true">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-100 hover:bg-electric hover:text-white flex items-center justify-center transition-colors duration-300" data-mock="true">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-100 hover:bg-electric hover:text-white flex items-center justify-center transition-colors duration-300" data-mock="true">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                    <path d="m2 3 10 9L22 3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+    
+    <!-- @COMPONENT: Footer -->
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-8 h-8 relative">
+                            <div class="absolute inset-0 border-2 border-white rounded-full transform rotate-45"></div>
+                            <div class="absolute inset-0 border-2 border-electric rounded-full transform -rotate-45"></div>
+                        </div>
+                        <span class="text-lg font-semibold tracking-tight">INFINITE ENTERPRISES</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Delivering excellence in imaging solutions since 2012. Your trusted partner for precision and innovation.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-sm font-medium tracking-wide uppercase mb-6">Quick Links</h4>
+                    <div class="space-y-3">
+                        <a href="#info" class="block text-gray-400 hover:text-white transition-colors">About Our Services</a>
+                        <a href="#about" class="block text-gray-400 hover:text-white transition-colors">Leadership Team</a>
+                        <a href="#contact" class="block text-gray-400 hover:text-white transition-colors">Get in Touch</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-sm font-medium tracking-wide uppercase mb-6">Partnership</h4>
+                    <p class="text-gray-400 leading-relaxed">
+                        Authorized dealer for <span class="text-white font-medium">TechNova Imaging Pvt. Ltd</span> since 2012.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Infinite Enterprises. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        (function() {
+            // GSAP Initialization
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Navigation smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        gsap.to(window, {duration: 1, scrollTo: target, ease: "power2.inOut"});
+                    }
+                });
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuToggle = document.querySelector('[data-mobile-menu-toggle]');
+            const mobileMenu = document.querySelector('[data-mobile-menu]');
+            
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    // TODO: Add GSAP animation for mobile menu
+                });
+            }
+            
+            // Hero animations
+            const heroContent = document.querySelector('[data-hero-content]');
+            if (heroContent) {
+                gsap.from(heroContent.children, {
+                    duration: 1.2,
+                    y: 50,
+                    opacity: 0,
+                    stagger: 0.2,
+                    ease: "power3.out"
+                });
+            }
+            
+            // Parallax effects
+            gsap.utils.toArray('[data-parallax-speed]').forEach(element => {
+                const speed = element.dataset.parallaxSpeed || 0.5;
+                gsap.to(element, {
+                    yPercent: -50 * speed,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true
+                    }
+                });
+            });
+            
+            // Section animations
+            gsap.utils.toArray('[data-info-content], [data-owners-grid], [data-contact-form]').forEach(element => {
+                gsap.from(element.children, {
+                    duration: 0.8,
+                    y: 30,
+                    opacity: 0,
+                    stagger: 0.1,
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 80%",
+                        toggleActions: "play none none reverse"
+                    }
+                });
+            });
+            
+            // Image reveal animations
+            gsap.utils.toArray('[data-info-image] img, [data-office-gallery] img').forEach(img => {
+                gsap.from(img, {
+                    duration: 1,
+                    scale: 1.1,
+                    opacity: 0,
+                    scrollTrigger: {
+                        trigger: img,
+                        start: "top 80%",
+                        toggleActions: "play none none reverse"
+                    }
+                });
+            });
+            
+            // Form focus animations
+            document.querySelectorAll('input, textarea').forEach(input => {
+                input.addEventListener('focus', () => {
+                    gsap.to(input, {duration: 0.3, scale: 1.02, ease: "power2.out"});
+                });
+                
+                input.addEventListener('blur', () => {
+                    gsap.to(input, {duration: 0.3, scale: 1, ease: "power2.out"});
+                });
+            });
+            
+            // Navigation background on scroll
+            ScrollTrigger.create({
+                start: "top -80",
+                end: 99999,
+                toggleClass: {className: "nav-scrolled", targets: "[data-nav]"}
+            });
+            
+            // TODO: Implement form submission logic
+            // TODO: Add loading states for form submission
+            // TODO: Implement error handling for form validation
+            
+        })();
+    </script>
+</body>
+</html>
